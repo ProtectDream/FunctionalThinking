@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        函数柯里化:
+        currying又称部分求值。一个currying的函数会接受一些参数，接受了这些参数之后，该函数并不会立即求值，而是继续返回另一个函数，刚才传入的参数
+        在函数形成的闭包中被保存起来。等到需要求值的时候，之前传入的所有参数都会被一次性求值
+    </div>
+    <script>
+        var cost = (function() {
+            var args = [];
+            return function() {
+                if(arguments.length === 0) {
+                    var result = 0;
+                    for(let i = 0; i < args.length; i++) {
+                        result += args[i];
+                    }
+                    return result;
+                } else {
+                    [].push.apply(args, arguments);
+                }
+            }
+        })();
+        cost(9);
+        cost(3);
+        cost();    //计算出前面的值
+    </script>
+</body>
+</html>

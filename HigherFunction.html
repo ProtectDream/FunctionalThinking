@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        高价函数:
+        高阶函数则是可以把函数作为参数，或是将函数作为返回值的函数
+    </div>
+    <script>
+        // 常见的高阶函数 例如forEach(), map(), reduce(), filter
+        let ponit = [3, 5, 8, 6];
+        let result = ponit.sort(function(x, y) {
+            return x - y;
+        })
+        
+        var results =ponit.reduce(function(total, num) {
+            return total + num;
+        })
+    </script>
+</body>
+</html>
